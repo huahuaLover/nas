@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasType"
 )
 
 func TestNasTypeNewAuthenticationFailureMessageIdentity(t *testing.T) {

@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	//"fmt"
-	"github.com/machi12/nas"
-	"github.com/machi12/nas/logger"
-	"github.com/machi12/nas/nasMessage"
+	"github.com/huahuaLover/nas"
+	"github.com/huahuaLover/nas/logger"
+	"github.com/huahuaLover/nas/nasMessage"
 )
 
 type nasMessageNotificationData struct {

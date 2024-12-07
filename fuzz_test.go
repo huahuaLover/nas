@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/machi12/nas"
+	"github.com/huahuaLover/nas"
 )
 
 func FuzzNAS(f *testing.F) {

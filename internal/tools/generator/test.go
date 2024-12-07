@@ -21,8 +21,8 @@ func GenerateTestLarge() {
 	}
 
 	fOut := NewOutputFile("nas_generated_test.go", "nas", []string{
-		"\"github.com/machi12/nas/nasMessage\"",
-		"\"github.com/machi12/nas/nasType\"",
+		"\"github.com/huahuaLover/nas/nasMessage\"",
+		"\"github.com/huahuaLover/nas/nasType\"",
 	})
 
 	for _, isGMM := range []bool{true, false} {

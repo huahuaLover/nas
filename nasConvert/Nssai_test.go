@@ -5,9 +5,9 @@ import (
 
 	"github.com/smartystreets/goconvey/convey"
 
-	"github.com/machi12/nas/nasConvert"
-	"github.com/machi12/nas/nasMessage"
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasConvert"
+	"github.com/huahuaLover/nas/nasMessage"
+	"github.com/huahuaLover/nas/nasType"
 	"github.com/machi12/openapi/models"
 )
 

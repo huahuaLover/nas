@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasType"
 	"github.com/machi12/openapi/models"
 )
 

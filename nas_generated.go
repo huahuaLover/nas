@@ -7,7 +7,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/machi12/nas/nasMessage"
+	"github.com/huahuaLover/nas/nasMessage"
 	// NOTE: 导包
 	"github.com/sirupsen/logrus"
 )

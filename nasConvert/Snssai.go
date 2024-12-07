@@ -3,8 +3,8 @@ package nasConvert
 import (
 	"encoding/hex"
 
-	"github.com/machi12/nas/logger"
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/logger"
+	"github.com/huahuaLover/nas/nasType"
 	"github.com/machi12/openapi/models"
 )
 

@@ -3,8 +3,8 @@
 package nas
 
 import (
-	"github.com/machi12/nas/nasMessage"
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasMessage"
+	"github.com/huahuaLover/nas/nasType"
 )
 
 var testsGmmMessage = []struct {

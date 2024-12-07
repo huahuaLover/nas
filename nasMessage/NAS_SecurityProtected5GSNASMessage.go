@@ -7,7 +7,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasType"
 )
 
 type SecurityProtected5GSNASMessage struct {

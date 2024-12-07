@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/machi12/nas/internal/tools/generator"
+	"github.com/huahuaLover/nas/internal/tools/generator"
 )
 
 // Generate table of types in nasType package
@@ -21,7 +21,7 @@ func main() {
 	fOut := generator.NewOutputFile("internal/tools/generator/types.go", "generator", []string{
 		"\"reflect\"",
 		"",
-		"\"github.com/machi12/nas/nasType\"",
+		"\"github.com/huahuaLover/nas/nasType\"",
 	})
 
 	fmt.Fprintln(fOut, "var nasTypeTable map[string]reflect.Type = map[string]reflect.Type{")

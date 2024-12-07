@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/machi12/nas/logger"
-	"github.com/machi12/nas/nasMessage"
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/logger"
+	"github.com/huahuaLover/nas/nasMessage"
+	"github.com/huahuaLover/nas/nasType"
 )
 
 type nasMessageAuthenticationFailureData struct {

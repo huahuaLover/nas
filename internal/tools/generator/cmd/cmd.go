@@ -1,6 +1,6 @@
 package main
 
-import "github.com/machi12/nas/internal/tools/generator"
+import "github.com/huahuaLover/nas/internal/tools/generator"
 
 func main() {
 	generator.ParseSpecs()

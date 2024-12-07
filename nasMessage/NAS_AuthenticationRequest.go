@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	"github.com/machi12/nas/nasType"
+	"github.com/huahuaLover/nas/nasType"
 )
 
 type AuthenticationRequest struct {
