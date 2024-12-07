@@ -1,4 +1,4 @@
-module github.com/machi12/nas
+module github.com/huahuaLover/nas
 
 go 1.21
 
