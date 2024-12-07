@@ -144,7 +144,8 @@ func (a *AuthenticationRequest) DecodeAuthenticationRequest(byteArray *[]byte) e
 			if err := binary.Read(buffer, binary.BigEndian, &a.AuthenticationParameterAUTN.Len); err != nil {
 				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterAUTN): %w", err)
 			}
-			if a.AuthenticationParameterAUTN.Len != 16 {
+			//lihaotian: update from 16 to 8
+			if a.AuthenticationParameterAUTN.Len != 8 {
 				return fmt.Errorf("invalid ie length (AuthenticationRequest/AuthenticationParameterAUTN): %d", a.AuthenticationParameterAUTN.Len)
 			}
 			a.AuthenticationParameterAUTN.SetLen(a.AuthenticationParameterAUTN.GetLen())
