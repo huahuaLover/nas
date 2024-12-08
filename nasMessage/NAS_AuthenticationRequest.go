@@ -130,8 +130,7 @@ func (a *AuthenticationRequest) DecodeAuthenticationRequest(byteArray *[]byte) e
 		if ieiN >= 0x80 {
 			if ieiN == 0x99{
 				tmpIeiN = ieiN
-			}
-			else {
+			} else {
 				tmpIeiN = (ieiN & 0xf0) >> 4
 			}
 		} else {
