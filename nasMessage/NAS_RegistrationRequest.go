@@ -302,18 +302,14 @@ func (a *RegistrationRequest) EncodeRegistrationRequest(buffer *bytes.Buffer) er
 		}
 	}
 	//lihaotian:add N 
-	if a.N != nil{
+	/*if a.N != nil{
 		if err := binary.Write(buffer, binary.BigEndian, a.N.GetIei()); err != nil {
 			return fmt.Errorf("NAS encode error (RegistrationRequest/N 1): %w", err)
 		}
-		//lihaotian: I AM NOT SURE
-		/*if err := binary.Write(buffer, binary.BigEndian, a.N.GetLen()); err != nil {
-			return fmt.Errorf("NAS encode error (RegistrationRequest/N 2): %w", err)
-		}*/
 		if err := binary.Write(buffer, binary.BigEndian, a.N.Octet[:]); err != nil {
 			return fmt.Errorf("NAS encode error (RegistrationRequest/N 3): %w", err)
 		}
-	}
+	}*/
 	return nil
 }
 
