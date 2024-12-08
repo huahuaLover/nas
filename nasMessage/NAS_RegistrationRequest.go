@@ -301,6 +301,19 @@ func (a *RegistrationRequest) EncodeRegistrationRequest(buffer *bytes.Buffer) er
 			return fmt.Errorf("NAS encode error (RegistrationRequest/EPSBearerContextStatus): %w", err)
 		}
 	}
+	//lihaotian:add N 
+	if a.N != nil{
+		if err := binary.Write(buffer, binary.BigEndian, a.N.GetIei()); err != nil {
+			return fmt.Errorf("NAS encode error (RegistrationRequest/N 1): %w", err)
+		}
+		//lihaotian: I AM NOT SURE
+		/*if err := binary.Write(buffer, binary.BigEndian, a.N.GetLen()); err != nil {
+			return fmt.Errorf("NAS encode error (RegistrationRequest/N 2): %w", err)
+		}*/
+		if err := binary.Write(buffer, binary.BigEndian, a.N.Octet[:]); err != nil {
+			return fmt.Errorf("NAS encode error (RegistrationRequest/N 3): %w", err)
+		}
+	}
 	return nil
 }
 
@@ -388,7 +401,7 @@ func (a *RegistrationRequest) DecodeRegistrationRequest(byteArray *[]byte) error
 			}
 		case RegistrationRequestS1UENetworkCapabilityType:
 			a.S1UENetworkCapability = nasType.NewS1UENetworkCapability(ieiN)
-			if err := binary.Read(buffer, binary.BigEndian, &a.S1UENetworkCapability.Len); err != nil {
+			if err := binary.Read(buffNAS_RegistrationRequester, binary.BigEndian, &a.S1UENetworkCapability.Len); err != nil {
 				return fmt.Errorf("NAS decode error (RegistrationRequest/S1UENetworkCapability): %w", err)
 			}
 			if a.S1UENetworkCapability.Len < 2 || a.S1UENetworkCapability.Len > 13 {
