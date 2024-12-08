@@ -139,6 +139,12 @@ func (a *AuthenticationRequest) DecodeAuthenticationRequest(byteArray *[]byte) e
 			if err := binary.Read(buffer, binary.BigEndian, a.AuthenticationParameterRAND.Octet[:]); err != nil {
 				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterRAND): %w", err)
 			}
+		//lihaotian:decode snmac
+		case AuthenticationRequestAuthenticationParameterSNMACType:
+			a.AuthenticationParameterSNMAC = nasType.NewAuthenticationParameterSNMAC(ieiN)
+			if err := binary.Read(buffer, binary.BigEndian, a.AuthenticationParameterSNMAC.Octet[:]); err != nil {
+				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterSNMAC): %w", err)
+			}
 		case AuthenticationRequestAuthenticationParameterAUTNType:
 			a.AuthenticationParameterAUTN = nasType.NewAuthenticationParameterAUTN(ieiN)
 			if err := binary.Read(buffer, binary.BigEndian, &a.AuthenticationParameterAUTN.Len); err != nil {

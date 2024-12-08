@@ -75,7 +75,7 @@ const (
 	MsgTypeULNASTransport                                   uint8 = 103
 	MsgTypeDLNASTransport                                   uint8 = 104
 )
-
+//lihaotian:need to decode snmac
 func (a *Message) GmmMessageDecode(byteArray *[]byte) error {
 	// NOTE: 打印
 	logrus.Infof("GmmMessageDecode called")
