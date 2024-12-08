@@ -7,6 +7,8 @@ import (
 	"encoding/binary"
 	"fmt"
 	"github.com/huahuaLover/nas/nasType"
+		// NOTE: 导包
+	"github.com/sirupsen/logrus"
 )
 
 type AuthenticationRequest struct {
