@@ -128,24 +128,32 @@ func (a *AuthenticationRequest) DecodeAuthenticationRequest(byteArray *[]byte) e
 		}
 		// fmt.Println(ieiN)
 		if ieiN >= 0x80 {
-			tmpIeiN = (ieiN & 0xf0) >> 4
+			if ieiN == 0x99{
+				tmpIeiN = ieiN
+			}
+			else {
+				tmpIeiN = (ieiN & 0xf0) >> 4
+			}
 		} else {
 			tmpIeiN = ieiN
 		}
 		// fmt.Println("type", tmpIeiN)
 		switch tmpIeiN {
 		case AuthenticationRequestAuthenticationParameterRANDType:
+			logrus.Infof("AuthenticationParameterRAND called")
 			a.AuthenticationParameterRAND = nasType.NewAuthenticationParameterRAND(ieiN)
 			if err := binary.Read(buffer, binary.BigEndian, a.AuthenticationParameterRAND.Octet[:]); err != nil {
 				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterRAND): %w", err)
 			}
 		//lihaotian:decode snmac
 		case AuthenticationRequestAuthenticationParameterSNMACType:
+			logrus.Infof("AuthenticationParameterSNMAC called")
 			a.AuthenticationParameterSNMAC = nasType.NewAuthenticationParameterSNMAC(ieiN)
 			if err := binary.Read(buffer, binary.BigEndian, a.AuthenticationParameterSNMAC.Octet[:]); err != nil {
 				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterSNMAC): %w", err)
 			}
 		case AuthenticationRequestAuthenticationParameterAUTNType:
+			logrus.Infof("AuthenticationParameterAUTN called")
 			a.AuthenticationParameterAUTN = nasType.NewAuthenticationParameterAUTN(ieiN)
 			if err := binary.Read(buffer, binary.BigEndian, &a.AuthenticationParameterAUTN.Len); err != nil {
 				return fmt.Errorf("NAS decode error (AuthenticationRequest/AuthenticationParameterAUTN): %w", err)
